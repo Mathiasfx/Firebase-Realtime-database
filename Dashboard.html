@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>::Dashboard::</title>
+
+     <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>        
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <!-- FIREBASE -->
+    <!-- Boobstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- FONT ASOWNAME -->
+    <script src="https://kit.fontawesome.com/8fee61ecf5.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body onload="verDatos()">
+
+    </style>
+    <div class="container-fluid">
+        <div class="row bg-dark">
+            <div class="col-lg-12">
+                <p class="text-center text-light display-4 pt-2" style="font-size:20px;">INFO DE JUGADORES</p>
+            </div>		
+        </div>		
+    </div> 
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-lg-6">				
+                <button id="csv" class="btn btn-dark " style="margin-right: 1em;">Exporar a CSV</button>
+                <button id="pdf" class="btn btn-dark ">Exporar a PDF</button>
+                
+            </div>
+            <div class="col-lg-6 mb-3" >
+                
+                <button class="btn btn-danger float-right"  onclick="CerrarSession()">Salir</button>
+                <!-- <button class="btn btn-success float-right" style="margin-right: 1em;" data-toggle="modal" data-target="#AGREGA">Nuevo</button> -->
+            </div>			
+        </div>	
+        
+            <div class="row">
+                <div class="col-lg-12">
+                <table class="table table-bordered table-striped" id="TablaInfo">
+                    <thead>
+                        <tr class="text-center bg-dark  text-light">                            
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Puntaje</th>
+                        </tr>								
+                    </thead>	
+                    <tbody id="tdata"> 
+                       
+                </table>							
+                </div>							
+            </div>
+               
+          
+    	<!--   AGREGAR NUEVO MODAL-->
+       <!-- <div class="modal fade" id="AGREGA" tabindex="-1" role="dialog" aria-labelledby="AGREGA">
+			<div class="modal-dialog" role="document">
+                
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="AGREGA">Agregar Nuevo</h5>
+						<button type="button" data-dismiss="modal"  class="close" aria-label="Close">
+							<span aria-hiden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">	
+						
+							<div class="form-group">
+								<input type="text" name="nombre" id="nombre" class="form-control form-control-lg" placeholder="Nombre Empresa / Emprendedor">								
+                            </div>
+                            <div class="form-group">
+								<input type="text" name="direccion" id="direccion" class="form-control form-control-lg" placeholder="Direccion">								
+							</div>				 -->			
+							<!-- <div class="form-group">
+								<label for="imagen">Seleccionar Logo</label>								 
+								<input type="file" name="imagen_logo" ref="Imagen_logo" id="imagen_logo" class="form-control-file">		
+                            </div>		
+                            <div class="form-group">
+								<label for="imagen">Seleccionar Portada</label>								 
+								<input type="file" name="imagen_portada" ref="imagen_portada" id="imagen_portada" class="form-control-file">		
+                            </div>	 -->
+                      <!--       <div class="form-group">
+								<input type="number" name="telefono_fijo" id="telefono_fijo" class="form-control form-control-lg" placeholder="Telefono Fijo">								
+                            </div>	
+                            <div class="form-group">
+								<input type="number" name="telefono_celular" id="telefono_celular" class="form-control form-control-lg" placeholder="Telefono Celular">								
+                            </div>		
+                            <div class="form-group">
+								<input type="text" name="email" id="email" class="form-control form-control-lg" placeholder="Email">								
+                            </div>				
+                            		
+                            
+                            <button type="button" id="btn_form"  class="btn btn-info btn-block btn-lg"  data-dismiss="modal"   onclick="guardar()">Agregar</button>	
+
+
+									
+											
+					</div>
+					
+					
+				</div>
+				
+			</div>
+			
+		</div> -->
+        <!-- AGREGAR NUEVO MODAL  -->
+
+
+       
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+<script src="js/Dashboard.js"></script>
+
+<script type="text/javascript" src="js/jspdf.min.js"></script>
+<script type="text/javascript" src="js/jspdf.plugin.autotable.min.js"></script>
+<script type="text/javascript" src="js/tableHTMLExport.js"></script>
+
+
+<script type="text/javascript">
+    $("#pdf").on("click",function(){
+        $("#TablaInfo").tableHTMLExport({
+            type:'pdf',
+            filename:'Memotest_info.pdf'
+        })
+    })
+
+</script>
+
+
+<script type="text/javascript">
+    $("#csv").on("click",function(){
+        $("#TablaInfo").tableHTMLExport({
+            type:'csv',
+            filename:'Memotest_info.csv'
+        })
+    })
+
+</script>
+
+
+
+     <!--modal
+     <script>
+        $('#AGREGA').on('shown.bs.modal', function () {
+       $('#AGREGA').trigger('focus')
+     })
+        </script> -->
+
+         
+
+
+
+
+<!--===============================================================================================-->
+
+
+</body>
+</html>

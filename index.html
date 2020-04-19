@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>::ADMIN GAMES::</title>
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<!--===============================================================================================-->
+
+	
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <!--===============================================================================================-->
+
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+     <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+			apiKey: "AIzaSyDAlb7iJwZvaSFM1PBf9ufC6s0dMrDvFac",
+    		authDomain: "memoria2020-8cb45.firebaseapp.com",
+    		databaseURL: "https://memoria2020-8cb45.firebaseio.com",
+    		projectId: "memoria2020-8cb45",
+    		storageBucket: "memoria2020-8cb45.appspot.com",
+    		messagingSenderId: "71649652857",
+    		appId: "1:71649652857:web:ee1bf7234c4936de19a4a8",
+    		measurementId: "G-G1D0R5RZ9G"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+       
+        </script>
+        <script>
+            firebase.auth().signOut();
+            
+        </script>
+
+    
+    <!--===============================================================================================-->
+    
+    <!--===============================================================================================-->
+
+
+</head>
+
+<body>
+
+  
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('img/img-01.jpg');">
+			<div class="wrap-login100 p-t-190 p-b-30">
+				<div class="wrap-login100">
+					
+				<img src="img/logo.png" width="200px">
+
+				</div>
+
+				<form action="#" method="post">
+					<span class="login100-form-title p-t-20 p-b-45">
+						Ingreso Panel Juego Memoria
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate="Usuario Requerido">
+						<input class="input100" id="email" type="text" name="email" required="true">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-10" data-validate="Password Requerido">
+						<input class="input100" id="password" type="password" name="password" required="true">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock"></i>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn p-t-10">
+						<input  onclick="Ingresar()" class="btn btn-info" value="INGRESAR">
+					</div>
+					<div class="msg" id="msg">
+
+				</div>
+				</form>
+			</div>
+		</div>
+    </div>
+
+    
+    
+      
+
+        
+         
+    <script src="js/app.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/jquery-2.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	
+    <script src="js/bootstrap.min.js"></script>
+    
+
+    
+
+     
+
+	
+</body>
+
+</html>
